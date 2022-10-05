@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+ <title>Musician Web page</title>
+<body>
+
+<h2>Musician guess by RajasekharaReddy Madire</h2>
+
+<form>
+    <label for="musicianName">Enter the secret musician name</label>
+    <input type ="password" id="musicianName" name="musicianName" value="John Lennon"> <br>
+
+    <label for="guessName">Guess the musician</label>
+    <input type ="text" id="guessName" name="guessName" autofocus> <br>
+
+    <input type="button" onclick="checkGuess()" value="Check the guess">
+</form>
+
+
+
+
+<p id="result">Correct or wrong answer counter!</p>
+<div class="container">
+        <img src="ant.jpg" alt="ant" width="100" height="100" onclick="swapImage()" id="imageSwap">
+</div>
+
+<script> 
+
+ var correct=0
+ var wrong=0
+ var useImage=1
+
+function swapImage()
+{
+    switch(useImage)
+    {
+        case 1: document.getElementById("imageSwap").setAttribute("src","mayfly.jpg")
+        useImage=2;
+        break;
+        case 2: document.getElementById("imageSwap").setAttribute("src","dragonfile.jpg")
+        useImage=3;
+        break;
+        case 3: document.getElementById("imageSwap").setAttribute("src","ant.jpg")
+        useImage=1;
+        break;
+    }
+}
+
+function checkGuess (){
+    console.log("Getting form values")
+    name = document.getElementById("musicianName").value
+    guess = document.getElementById("guessName").value
+    
+    if(name==guess){
+        correct=correct+1
+        alert("You got it right!")
+        
+    } else {
+        wrong=wrong+1
+        alert("Wrong musician!!")
+       
+    }
+    document.getElementById("result").innerHTML="Wrong guess : " +wrong+"\n Correct guess : "+correct
+}
+</script>
+
+</body>
+</html> 
