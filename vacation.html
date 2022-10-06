@@ -25,9 +25,33 @@
 
 <p id="result">The vacation is : </p>
 
+<form>
+    <label for="property">Enter a city : </label>
+    <input type="text" id="property" name="property" value="city"> <br>
+
+    <label for="price">Enter price : </label>
+    <input type="text" id="price" name="price"> <br>
+
+    <input type="button" onclick="updateVacation()" value="Update the vacation">
+</form>
+
+<p id="updation">The vacation after updation: </p>
+
 <script> 
 var my_vacation={}
-function selectVacation (){
+
+function updateVacation()
+{
+    let property=document.getElementById("property").value
+    let price=document.getElementById("price").value
+
+    my_vacation.property=property
+    my_vacation.price=price
+
+    document.getElementById("updation").innerHTML="The updated vacation :"+JSON.stringify(my_vacation)
+}
+function selectVacation ()
+{
     my_vacation={}
     
     let travelAir=document.getElementById("travel").checked
