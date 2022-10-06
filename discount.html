@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
  
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <title>Discount Page</title>
+    </head>
+   
 <body>
 
 <h2>RajasekharaReddy Madire computes discounts</h2>
@@ -12,7 +18,7 @@
     <label for="form1_nick">Enter the discount percentage </label>
     <input type ="number" id="discountPercentage" name="discountPercentage"  value="10"> <br>
 
-    <input type="button" onclick="discount()" value="Apply discount">
+    <input type="button" onclick="discount()" value="Apply discount" class="btn btn-warning">
 </form>
 
 
@@ -28,7 +34,7 @@
     <input type="radio" id="exponent" name="color"   
        value="exponent">
     <label for="exponent">**</label></br> 
-    <input type="button" onclick="chooseOp()" value="Get values from radio group">
+    <input type="button" onclick="chooseOp()" value="Get values from radio group" class="btn btn-danger">
   </form>
   <p id="functionResult">The output is :</p>
   <br>

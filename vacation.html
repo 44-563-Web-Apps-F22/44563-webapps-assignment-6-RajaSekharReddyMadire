@@ -2,6 +2,8 @@
 <html>
 
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>Vacation Page</title>
 </head>
  
@@ -9,7 +11,7 @@
 
 <h2>RajasekharaReddy Madire selects a vacation</h2>
 
-<form>
+<form class="form-horizontal">
     <label for="travel">Travel by Air </label>
     <input type ="checkbox" id="travel" name="travel"  value="True"> <br>
 
@@ -19,20 +21,20 @@
     <label for="resort">Resort </label>
     <input type ="checkbox" id="resort" name="resort" value="False"> <br>
 
-    <input type="button" onclick="selectVacation()" value="Select a vacation ">
+    <input type="button" onclick="selectVacation()" value="Select a vacation " class="btn btn-success">
 </form>
 
 
 <p id="result">The vacation is : </p>
 
-<form>
+<form class="form-horizontal">
     <label for="property">Enter a city : </label>
     <input type="text" id="property" name="property" value="city"> <br>
 
     <label for="price">Enter price : </label>
     <input type="text" id="price" name="price"> <br>
 
-    <input type="button" onclick="updateVacation()" value="Update the vacation">
+    <input type="button" onclick="updateVacation()" value="Update the vacation" class="btn btn-info">
 </form>
 
 <p id="updation">The vacation after updation: </p>

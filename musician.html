@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html>
- <title>Musician Web page</title>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Musician Web page</title>
+</head>
+ 
 <body>
 
 <h2>Musician guess by RajasekharaReddy Madire</h2>
 
-<form>
+<form class="form-inline">
     <label for="musicianName">Enter the secret musician name</label>
     <input type ="password" id="musicianName" name="musicianName" value="John Lennon"> <br>
 
     <label for="guessName">Guess the musician</label>
     <input type ="text" id="guessName" name="guessName" autofocus> <br>
 
-    <input type="button" onclick="checkGuess()" value="Check the guess">
+    <input type="button" onclick="checkGuess()" value="Check the guess" id="guessButton" class="btn btn-primary">
 </form>
 
-
-
-
 <p id="result">Correct or wrong answer counter!</p>
+
 <div class="container">
         <img src="ant.jpg" alt="ant" width="100" height="100" onclick="swapImage()" id="imageSwap">
 </div>
@@ -28,6 +31,11 @@
  var correct=0
  var wrong=0
  var useImage=1
+
+function wrongGuess()
+{
+    document.getElementById("result").innerHTML="Sorry, game Over "
+}
 
 function swapImage()
 {
@@ -53,11 +61,16 @@ function checkGuess (){
     
     if(name==guess){
         correct=correct+1
+        wrong=0
         alert("You got it right!")
         
     } else {
         wrong=wrong+1
         alert("Wrong musician!!")
+        if(wrong==3)
+        {
+            document.getElementById("guessButton").setAttribute("onclick","wrongGuess()")
+        }
        
     }
     document.getElementById("result").innerHTML="Wrong guess : " +wrong+"\n Correct guess : "+correct
