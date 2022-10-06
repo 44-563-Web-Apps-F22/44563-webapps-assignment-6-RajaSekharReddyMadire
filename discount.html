@@ -18,8 +18,51 @@
 
 <p id="offer">Discount amounts for base  </p>
 
+<form>
+    <input type="radio" id="times" name="color" value="times"   
+      checked >
+    <label for="times">*</label></br>
+  
+    <input type="radio" id="divide" name="color" 
+       value="divide">
+    <label for="divide">/</label></br>
+  
+    <input type="radio" id="exponent" name="color"   
+       value="exponent">
+    <label for="exponent">**</label></br>
+
+    
+
+    <input type="button" onclick="chooseOp()" value="Get values from radio group">
+  </form>
+
+  <p id="functionResult">The output is :</p>
+  <br>
+
+
 <script> 
 
+function chooseOp()
+{
+    let amount=document.getElementById("baseAmount").value
+    let discountPer=document.getElementById("discountPercentage").value
+    let timesOp=document.getElementById("times").checked
+    let divideOp=document.getElementById("divide").checked
+    let exponentOp=document.getElementById("exponent").checked
+
+    if(timesOp)
+    {
+        document.getElementById("functionResult").innerHTML ="The output is : "+(amount*discountPer)
+    }
+    if(divideOp)
+    {
+        document.getElementById("functionResult").innerHTML ="The output is : "+(amount/discountPer)
+    }
+    if(exponentOp)
+    {
+        document.getElementById("functionResult").innerHTML ="The output is : "+(amount**discountPer)
+    }
+}
 
 
 function discount (){
