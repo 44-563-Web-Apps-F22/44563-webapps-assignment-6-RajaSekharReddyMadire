@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vacation Page</title>
+</head>
+ 
+<body>
+
+<h2>RajasekharaReddy Madire selects a vacation</h2>
+
+<form>
+    <label for="travel">Travel by Air </label>
+    <input type ="checkbox" id="travel" name="travel"  value="True"> <br>
+
+    <label for="domestic">Domestic </label>
+    <input type ="checkbox" id="domestic" name="domestic" value="True"> <br>
+
+    <label for="resort">Resort </label>
+    <input type ="checkbox" id="resort" name="resort" value="False"> <br>
+
+    <input type="button" onclick="selectVacation()" value="Select a vacation ">
+</form>
+
+
+<p id="result">The vacation is : </p>
+
+<script> 
+var my_vacation={}
+function selectVacation (){
+    my_vacation={}
+    
+    let travelAir=document.getElementById("travel").checked
+    let travelDomestic=document.getElementById("domestic").checked
+    let travelResort=document.getElementById("resort").checked
+    
+    my_vacation={
+        "air":travelAir,
+        "domestic":travelDomestic,
+        "resort":travelResort
+    }
+    
+    document.getElementById("result").innerHTML="The vacation :"+JSON.stringify(my_vacation)
+    console.log(my_vacation)
+   
+}
+</script>
+
+</body>
+</html> 
